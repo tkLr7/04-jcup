@@ -21,13 +21,8 @@ expr ::= expr:a MAIS expr:b         {: RESULT = a.intValue() + b.intValue(); :}
        | expr:a DIVIS expr:b  {: RESULT = a.intValue() / b.intValue(); :}
        | expr:a RESTO expr:b  {: RESULT = a.intValue() % b.intValue(); :}
        | expr:a POTEN expr:b  {: 
-           RESULT = new Integer(
-                      (int) Math.pow(
-                        a.intValue(), 
-                        b.intValue()
-                      )
-                    );
-         :}
+           RESULT = new Integer((int) Math.pow(a.intValue(), b.intValue()));
+        :}
        | PARENTESQ expr:a PARENTDIR {: RESULT = a.intValue(); :}
        | INTEIRO:a                  {: RESULT = a.intValue(); :}
        ;
